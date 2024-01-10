@@ -1,6 +1,7 @@
 from PIL import Image
 import networkx as nx
 import matplotlib.pyplot as plt
+#from networkx.drawing.nx_agraph import graphviz_layout
 from networkx.drawing.nx_pydot import graphviz_layout
 import numpy as np
 from matplotlib.widgets import Slider, Button
