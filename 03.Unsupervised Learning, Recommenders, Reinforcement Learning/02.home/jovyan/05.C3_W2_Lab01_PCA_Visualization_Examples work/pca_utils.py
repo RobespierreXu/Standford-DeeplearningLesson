@@ -307,13 +307,15 @@ def plot_widget():
     #     projection_plot_1d = get_plane_base(orthogonal_to_line,n_line)
     #     rhs_scatter.data_source.data['x'] = projection_plot_1d[:,0]
 
-
-
-    freq_slider = interactive(update, angle=(0, 180, 1))        
+    # NameError: cannot access free variable 'fig' where it is not associated with a value in enclosing scope
+    #freq_slider = interactive(update, angle=(0, 180, 1))        
     fig = go.FigureWidget(data = final_data ).update_yaxes(scaleanchor = 'x', scaleratio= 1, range = [-1,1], visible=False).update_xaxes(range = [-1.5,1.5], visible=False)
+
     rhs_fig = go.FigureWidget(data = rhs_line.data + rhs_scatter.data).update_yaxes(scaleanchor = 'x', scaleratio= 1, range = [-1,1], showgrid=False, visible=False).update_xaxes(range = [-1.5,1.5], showgrid=False, visible=False)
 
     rhs_fig.update_layout(dict(width = 500, height = 400, plot_bgcolor = 'rgba(0,0,0,0)', title="PCA Projection"))
+
+    freq_slider = interactive(update, angle=(0, 180, 1))        
 
     fig.update_layout(dict(width = 500, height = 570, plot_bgcolor = 'rgba(0,0,0,0)'))
 
