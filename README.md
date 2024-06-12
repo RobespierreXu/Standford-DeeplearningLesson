@@ -28,8 +28,10 @@ AndrewLessonFromD eepLearning.ai
 
   \01.practice  : 原题
 
-  \02.home      : 我已经做好了的练习
+  \02.home      : 我已经做好了的练习；
 
   环境：由于需要使用一些Linux的环境，参考https://blog.csdn.net/amuro_ray027/article/details/136735280 进行Docker环境搭建
-  可使用文件夹下的`Dockerfile`进行image构建
+  然后使用文件夹下的`Dockerfile`进行image构建，在Dockerfile所在的文件夹下运行
+  `docker build -t reinforcement-learning:v2 .`即可
+  从Chrome启动127.0.0.1:10000，输入对应的`token`信息就可以启动Jupyter Notebook了，但是考虑到plotly和ipywidget的兼容性，建议启动Jupyterlab进行运行，才能保证所有的结果正确无误。
   
